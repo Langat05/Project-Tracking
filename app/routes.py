@@ -1,5 +1,5 @@
-from flask import render_template
-from app import app, db 
+from flask import render_template, url_for, flash, redirect, request,abort
+from app import app, db, bcrypt
 from flask_login import current_user, login_required, login_user,logout_user
 from app.models import User,Post
 from werkzeug.urls import url_parse
