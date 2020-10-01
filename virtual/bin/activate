@@ -28,7 +28,11 @@ deactivate () {
     fi
 
     unset VIRTUAL_ENV
+<<<<<<< HEAD
     if [ ! "$1" = "nondestructive" ] ; then
+=======
+    if [ ! "${1:-}" = "nondestructive" ] ; then
+>>>>>>> 7697a7acb084532501959eeb7c1f3b4f059da74b
     # Self destruct!
         unset -f deactivate
     fi
@@ -37,7 +41,11 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
+<<<<<<< HEAD
 VIRTUAL_ENV="/home/luqqy/Desktop/Project-Tracking/virtual"
+=======
+VIRTUAL_ENV="/home/moringa/Desktop/Python/Tracking-website/virtual"
+>>>>>>> 7697a7acb084532501959eeb7c1f3b4f059da74b
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

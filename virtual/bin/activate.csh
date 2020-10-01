@@ -8,7 +8,11 @@ alias deactivate 'test $?_OLD_VIRTUAL_PATH != 0 && setenv PATH "$_OLD_VIRTUAL_PA
 # Unset irrelevant variables.
 deactivate nondestructive
 
+<<<<<<< HEAD
 setenv VIRTUAL_ENV "/home/luqqy/Desktop/Project-Tracking/virtual"
+=======
+setenv VIRTUAL_ENV "/home/moringa/Desktop/Python/Tracking-website/virtual"
+>>>>>>> 7697a7acb084532501959eeb7c1f3b4f059da74b
 
 set _OLD_VIRTUAL_PATH="$PATH"
 setenv PATH "$VIRTUAL_ENV/bin:$PATH"
