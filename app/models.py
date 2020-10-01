@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+# <<<<<<< HEAD
 from app import db 
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import UserMixin
@@ -23,14 +23,14 @@ class User(UserMixin, db.Model):
     pass_secure = db.Column(db.String(255))
    
 
-=======
+# =======
 from datetime import datetime
 from app import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
-from app import login
+# from app import login
 from time import time
-import jwt
+# import jwt
 from app import app
 
 class User(UserMixin, db.Model):
@@ -63,9 +63,9 @@ class User(UserMixin, db.Model):
             return
         return User.query.get(id)
 
-@login.user_loader
-def load_user(id):
-    return User.query.get(int(id))  
+# @login.user_loader
+# def load_user(id):
+#     return User.query.get(int(id))  
        
 class Post(db.Model):
     id=db.Column(db.Integer, primary_key=True)
@@ -74,8 +74,8 @@ class Post(db.Model):
     user_id=db.Column(db.Integer, db.ForeignKey('user.id'))
     def __repr__(self):
         return '<Post {}>'.format(self.body)
-<<<<<<< HEAD
->>>>>>> 4feba431ca240e1e51ee6ff697934881aa993e54
-=======
+# <<<<<<< HEAD
+# >>>>>>> 4feba431ca240e1e51ee6ff697934881aa993e54
+# =======
   
->>>>>>> 4e0fdcd798953d9e14cabcb49e48ad659e8a591e
+# >>>>>>> 4e0fdcd798953d9e14cabcb49e48ad659e8a591e

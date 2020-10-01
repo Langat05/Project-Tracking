@@ -1,5 +1,5 @@
-{% extends 'auth/auth-base.html'%} {% import 'bootstrap/wtf.html' as wtf%} {%
-block content%}
+ {%block content%}
+
 
 <div class="container">
   <div class="row">
@@ -18,11 +18,11 @@ block content%}
       {% endfor %}
       <!-- Login form  -->
 
-      {{ wtf.quick_form(login_form) }}
+
 
       <p>
         Don't have an account?
-        <a href="{{url_for('auth.register')}}">Sign up here</a>
+        <a href="{{url_for('register')}}">Sign up here</a>
       </p>
     </div>
 
