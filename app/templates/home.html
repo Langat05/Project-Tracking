@@ -1,11 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-<body>
-    <h1>Welcome to project-tracking</h1>
-</body>
-</html>
+{% extends "dashboard.html" %}
+{% block content %}
+<div class="container quotes" style="margin-top: 60px;">
+    <h1 class="text-center">Tracking website</h1>
+<div class="">
+    {% for post in posts %}
+    <div class="col-md-12">
+            <article>
+                    <div class="card m-2 p-4 shadow myshadow">
+                        <div class="card-body">
+                            <div class="">
+                                <a class="mr-2" href="">Posted by : {{ post.author.username }}</a>
+                                <small class="text-muted">Date Posted : {{ post.date_posted.strftime('%d-%m-%Y')}}</small>
+                            </div>
+                            <hr>
+                            <h2><a class="card-title" href="">{{ post.title }}</a></h2>
+                            <p class="card-content">{{ post.content }}</p>
+                            <button class="btn btn-outline-secondary" type="button">
+                                <a href="{{url_for('post',post_id=post.id)}}">View Page</a>
+                            </button>
+                        </div>
+                    </article>
+    </div>
+    {% endfor %}
+    </div>
+</div>
+    
+    {% endblock content %}
