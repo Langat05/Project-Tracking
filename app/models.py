@@ -7,7 +7,6 @@ from time import time
 import jwt
 from app import app
 
-
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), index=True, unique=True)
@@ -49,3 +48,4 @@ class Post(db.Model):
     user_id=db.Column(db.Integer, db.ForeignKey('user.id'))
     def __repr__(self):
         return '<Post {}>'.format(self.body)
+  
