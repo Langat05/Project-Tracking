@@ -19,4 +19,10 @@ class PostModelTest(unittest.TestCase):
     def test_get_post(self):
         self.new_post.save()
         got_post = Post.get_post(1)
-        self.assertTrue(new_post is not None)
+        self.assertTrue(got_post is not None)
+
+
+
+#class MyTestCase(unittest.TestCase):
+    #def test_something(self):
+        #self.assertEqual(True, False)
