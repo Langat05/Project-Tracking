@@ -1,7 +1,5 @@
 import os
 
-<<<<<<< HEAD
-
 class Config:
     '''
     General configuration parent class
@@ -51,8 +49,8 @@ config_options = {
 'production':ProdConfig,
 'test':TestConfig
 }
-=======
+
 class config:
     SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI')
     SECRET_KEY = os.environ.get('SECRET_KEY')
->>>>>>> 4feba431ca240e1e51ee6ff697934881aa993e54
+
