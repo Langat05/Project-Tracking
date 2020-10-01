@@ -1,17 +1,14 @@
-from datetime import datetime
-from app import db
-from werkzeug.security import generate_password_hash, check_password_hash
+from app import db 
+from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import UserMixin
-from app import login_manager as login
-from time import time
-import jwt
-from app import app
+from . import login_manager
+from datetime import datetime 
 
 
 
-# @login_manager.user_loader
-# def load_user(user_id):
-#     return User.query.get(int(user_id))
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 class User(UserMixin, db.Model):
     __tablename__ = 'users'
@@ -48,9 +45,9 @@ class User(UserMixin, db.Model):
             return
         return User.query.get(id)
 
-@login.user_loader
-def load_user(id):
-    return User.query.get(int(id))  
+# @login.user_loader
+# def load_user(id):
+#     return User.query.get(int(id))  
        
 class Post(db.Model):
     id=db.Column(db.Integer, primary_key=True)

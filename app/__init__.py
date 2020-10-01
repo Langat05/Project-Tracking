@@ -16,5 +16,8 @@ login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 login_manager.login_message_category = 'info'
 
+# <<<<<<< HEAD
+# =======
 
+# >>>>>>> a556091e54bcae2e4b3e5623ba407cbe8e297aca
 from app import routes
