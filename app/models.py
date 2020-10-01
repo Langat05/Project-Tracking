@@ -1,3 +1,29 @@
+<<<<<<< HEAD
+from app import db 
+from werkzeug.security import generate_password_hash,check_password_hash
+from flask_login import UserMixin
+from . import login_manager
+from datetime import datetime 
+
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
+
+class User(UserMixin, db.Model):
+    __tablename__ = 'users'
+    id = db.Column(db.Integer,primary_key = True)
+    username = db.Column(db.String(255),index = True) 
+    email = db.Column(db.String(255),unique = True,index = True)
+    role_id = db.Column(db.Integer,db.ForeignKey('roles.id'))
+    bio = db.Column(db.String(255))
+    profile_pic_path = db.Column(db.String())
+    password_hash = db.Column(db.String(255))
+    pass_secure = db.Column(db.String(255))
+   
+
+=======
 from datetime import datetime
 from app import db
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -48,4 +74,8 @@ class Post(db.Model):
     user_id=db.Column(db.Integer, db.ForeignKey('user.id'))
     def __repr__(self):
         return '<Post {}>'.format(self.body)
+<<<<<<< HEAD
+>>>>>>> 4feba431ca240e1e51ee6ff697934881aa993e54
+=======
   
+>>>>>>> 4e0fdcd798953d9e14cabcb49e48ad659e8a591e
