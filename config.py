@@ -55,4 +55,8 @@ config_options = {
 class config:
     SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI')
     SECRET_KEY = os.environ.get('SECRET_KEY')
+<<<<<<< HEAD
 >>>>>>> 7697a7acb084532501959eeb7c1f3b4f059da74b
+=======
+>>>>>>> 4feba431ca240e1e51ee6ff697934881aa993e54
+>>>>>>> dev

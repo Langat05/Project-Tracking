@@ -23,9 +23,12 @@ class User(UserMixin, db.Model):
     pass_secure = db.Column(db.String(255))
    
 
+<<<<<<< HEAD
     def save_comment(self):
         db.session.add(self)
         db.session.commit()
+=======
+>>>>>>> dev
 =======
 from datetime import datetime
 from app import db
@@ -35,7 +38,6 @@ from app import login
 from time import time
 import jwt
 from app import app
-
 
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -78,4 +80,12 @@ class Post(db.Model):
     user_id=db.Column(db.Integer, db.ForeignKey('user.id'))
     def __repr__(self):
         return '<Post {}>'.format(self.body)
+<<<<<<< HEAD
 >>>>>>> 7697a7acb084532501959eeb7c1f3b4f059da74b
+=======
+<<<<<<< HEAD
+>>>>>>> 4feba431ca240e1e51ee6ff697934881aa993e54
+=======
+  
+>>>>>>> 4e0fdcd798953d9e14cabcb49e48ad659e8a591e
+>>>>>>> dev
