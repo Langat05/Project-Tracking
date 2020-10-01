@@ -28,11 +28,11 @@ from datetime import datetime
 from app import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
-<<<<<<< HEAD
+
 # from app import login
-=======
+
 from app import login_manager as login
->>>>>>> a556091e54bcae2e4b3e5623ba407cbe8e297aca
+
 from time import time
 # import jwt
 from app import app
