@@ -1,10 +1,17 @@
 from flask import render_template, url_for, flash, redirect, request,abort
 from app import app, db, bcrypt
-from flask_login import current_user, login_required, login_user,logout_user
+from flask_login import current_user, login_required, login_user,logout_user,LoginManager, UserMixin
 from app.models import User,Post
 from werkzeug.urls import url_parse
 from app.forms import LoginForm, RegistrationForm,PostForm,ResetPasswordRequestForm,ResetPasswordForm
 from app.email import send_password_reset_email
+
+
+
+
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'login'
 
 @app.route('/', methods=['GET', 'POST'])    
 @app.route('/index', methods=['GET', 'POST'])    
@@ -20,7 +27,9 @@ def index():
     posts = current_user.followed_posts().all()
     return render_template("index.html", title='Home Page', form=form,
                            posts=posts)
-
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -93,3 +102,9 @@ def reset_password(token):
         flash('Your password has been reset.')
         return redirect(url_for('login'))
     return render_template('reset_password.html', form=form)
+
+
+@app.route("/user")
+def user():
+    if "user" in session:
+        user=session["user"]

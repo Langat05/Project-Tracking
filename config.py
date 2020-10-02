@@ -1,6 +1,6 @@
 import os
 
-<<<<<<< HEAD
+
 
 class Config:
     '''
@@ -8,9 +8,9 @@ class Config:
     '''
 
     SECRET_KEY = os.environ.get('SECRET_KEY')
-    SQLALCHEMY_DATABASE_URI = ''
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://lucky:password@localhost/project'
     # UPLOADED_PHOTOS_DEST ='app/static/photos'
-    SQLALCHEMY_TRACK_MODIFICATIONS=False
+    SQLALCHEMY_TRACK_MODIFICATIONS=True
     #  email configurations
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 587 
@@ -18,14 +18,14 @@ class Config:
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
     SUBJECT_PREFIX = 'project-tracking'
-    SENDER_EMAIL = ''
+    SENDER_EMAIL = 'luckyoula@gmail.com'
 
     # simple mde  configurations
     SIMPLEMDE_JS_IIFE = True
     SIMPLEMDE_USE_CDN = True
 
 class TestConfig(Config):
-    SQLALCHEMY_DATABASE_URI = ''
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://lucky:password@localhost/project'
 
 
 class ProdConfig(Config):
@@ -49,10 +49,6 @@ class DevConfig(Config):
 config_options = {
 'development':DevConfig,
 'production':ProdConfig,
-'test':TestConfig
-}
-=======
-class config:
-    SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI')
-    SECRET_KEY = os.environ.get('SECRET_KEY')
->>>>>>> 4feba431ca240e1e51ee6ff697934881aa993e54
+'test':TestConfig }
+
+
